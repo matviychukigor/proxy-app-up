@@ -1,0 +1,157 @@
+.wrapper {
+  border: 2px solid grey;
+  border-radius: 20px;
+  padding: 0 20px 20px 20px;
+  margin-left: 30px;
+}
+
+.donat-header {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.donat-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1200px) {
+  .cryptocurrensy-wrapper {
+    /* margin-left: 40px;
+    margin-right: auto; */
+    /*hz mozhna ostavit mb*/
+  }
+}
+
+.donat-card_header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.donate-btn_country {
+  display: block;
+  width: 290px;
+  height: 45px;
+  font-size: 20px;
+  margin: 0 auto 15px auto;
+}
+
+.label {
+  margin-top: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.donat-input {
+  display: block;
+  text-align: center;
+  width: 290px;
+  font-size: 20px;
+  border: 2px solid #111;
+  border-radius: 10px;
+  height: 45px;
+  margin: 0 auto 15px auto;
+}
+
+.donate-btn {
+  color: #fff;
+  border-radius: 10px;
+  display: block;
+  width: 290px;
+  height: 45px;
+  font-size: 20px;
+  margin: 0 auto 15px auto;
+}
+
+.donate-btn_country {
+  border-radius: 10px;
+}
+
+.img-wrapper {
+  max-width: 300px;
+}
+
+.donate-img {
+  width: 95px;
+  height: auto;
+  margin: 2px;
+  object-fit: contain;
+}
+
+.donate-img_header {
+  width: 60px;
+  margin: 0 5px 5px 10px;
+}
+
+.ok-emoji {
+  float: right;
+}
+
+@media screen and (max-width: 480px) {
+  .donat-header {
+    font-size: 26px;
+  }
+  .donat-card_header {
+    font-size: 28px;
+  }
+  .donate-btn_country {
+    width: 240px;
+    height: 40px;
+  }
+  .donat-input {
+    width: 240px;
+    height: 40px;
+  }
+  .donate-btn {
+    width: 240px;
+    height: 40px;
+  }
+  .donate-img {
+    width: auto;
+    height: 40px;
+  }
+  .card-wrapper {
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 398px) {
+  .donat-header {
+    font-size: 24px;
+  }
+  .donat-card_header {
+    font-size: 25px;
+  }
+  .donate-btn_country {
+    width: 220px;
+  }
+  .donat-input {
+    width: 220px;
+  }
+  .donate-btn {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .donat-card_header {
+    font-size: 22px;
+  }
+  .donate-btn_country {
+    width: 200px;
+    height: 36px;
+  }
+  .donat-input {
+    width: 200px;
+    height: 36px;
+  }
+  .donate-btn {
+    width: 200px;
+    height: 36px;
+  }
+}

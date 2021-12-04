@@ -1,0 +1,65 @@
+.country_btn {
+  height: 55px;
+  width: 150px;
+}
+
+.input-country {
+  width: 50px;
+  height: 20px;
+  margin: 0 auto;
+}
+
+.itemLi {
+  width: 170px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.ulItem {
+  margin-top: 10px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.list__item {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #6c757d;
+  margin: 4px;
+  cursor: pointer;
+  color: white;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  outline: none;
+}
+
+.list__item:hover {
+  background: #5a6268;
+}
+
+.selected {
+  background: #595959;
+}
+
+.tick-image {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  margin: 0 0 6px 10px;
+}
+
+@media screen and (max-width: 426px) {
+  .list__item{
+    width: 95px;
+    padding: 10px;
+    height: 25px;
+  }
+}

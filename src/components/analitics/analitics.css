@@ -1,0 +1,51 @@
+.analitic_wrapper{
+    /* margin: 20px 40px; */
+    padding: 20px 30px 120px 60px ;
+    height: 100%;
+    background: #3E444A;
+}
+
+.cardWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* justify-content: space-around; */
+}
+
+/* #pageDropDown {
+    display: none;
+} */
+.react-bootstrap-table-pagination-list {
+    text-align: start;
+    transform: translateX(-80%);
+}
+
+.page-link{
+    background: #212121;
+    border: 0px
+}
+
+.table{
+    color: #fff;
+    background-color: #212121;
+    border: 2px solid #212121;
+}
+
+.table-bordered th {
+    border: 0px
+}
+
+.form{
+    margin: 0 auto;
+}
+
+.nav-link.active {
+    color: #fff;
+    background-color: #212121;
+    border: 0px;
+}
+
+.nav-link{
+    color: #fff;
+    border-radius: 0.25rem;
+}

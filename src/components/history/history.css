@@ -1,0 +1,22 @@
+.history-logo {
+  margin: 0 auto 5px;
+}
+
+.historyWrapper{
+  margin: 0 30px;
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 678px) {
+  .historyWrapper {
+    margin-left: 50px;
+  }
+}
+@media screen and (max-width: 585px) {
+  .historyWrapper {
+    margin-right: 10px;
+  }
+  th {
+    font-size: 14px;
+  }
+}
