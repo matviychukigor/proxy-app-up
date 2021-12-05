@@ -19,13 +19,13 @@
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .cryptocurrensy-wrapper {
     /* margin-left: 40px;
     margin-right: auto; */
-    /*hz mozhna ostavit mb*/
+    /*hz mozhna ostavit mb
   }
-}
+} */
 
 .donat-card_header {
   text-align: center;
@@ -39,6 +39,9 @@
   height: 45px;
   font-size: 20px;
   margin: 0 auto 15px auto;
+  background-color: #16A2B8;
+  border: 0px;
+  color: #fff;
 }
 
 .label {

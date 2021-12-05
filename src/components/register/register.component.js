@@ -235,11 +235,11 @@ export default class Register extends Component {
                 </div>
 
                 <div className="form-group">
-                  <button className="btn btn-primary btn-block mt-3">Sign Up</button>
+                  <button className="btn btn-primary btn-block mt-3" style={{width: "100%"}}>Sign Up</button>
                 </div>
                 <Link to={"/login"} className="nav-text">
                   <div className="form-group">
-                    <button className="btn btn-block">Login</button>
+                    <button className="btn btn-block" style={{width: "100%"}}>Login</button>
                   </div>
                 </Link>
               </div>

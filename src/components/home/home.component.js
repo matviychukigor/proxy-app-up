@@ -292,7 +292,7 @@ export default class Proxy extends Component {
                 />
               </FormGroup>
             </Col>
-            <Col md={4} sm={4}>
+            <Col md={4} sm={4} style={{marginLeft: "10px"}}>
               <FormGroup className="zip-wrapper">
                 <Input
                   key="zip"

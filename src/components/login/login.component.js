@@ -143,16 +143,17 @@ export default class Login extends Component {
             <div className="form-group">
               <button
                 className="btn btn-primary btn-block mt-3"
+                style={{width: "100%"}}
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
-                  <span className="spinner-border spinner-border-sm"></span>
+                  <span className="spinner-border spinner-border-sm" ></span>
                 )}
                 <span>Login</span>
               </button>
               <Link to={"/register"} className="nav-text">
                 <div className="form-group">
-                  <button className="btn btn-block">Register</button>
+                  <button className="btn btn-block" style={{width: "100%"}}>Register</button>
                 </div>
               </Link>
             </div>
