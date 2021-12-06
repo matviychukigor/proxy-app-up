@@ -128,7 +128,7 @@ nav.main-menu.expanded {
   bottom: 0;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .main-menu:before{
     content: " ";
     position: fixed;
@@ -211,7 +211,7 @@ nav.main-menu.expanded {
     width: 250px;
   }
 }
-
+ */
 
 
 
