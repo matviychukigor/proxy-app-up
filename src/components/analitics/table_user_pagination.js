@@ -13,8 +13,8 @@ const PaginationTabUser = () => {
     const [inputValue, setInputValue] = useState("");
 
     const [ checkedNick, setCheckedNick ] = useState("");
-    const [ changeValueBalance, setBalanceChange ] = useState(0);
-    const [ upgradeValueBalance, setBalanceUpgrade ] = useState(0);
+    const [ changeValueBalance, setBalanceChange ] = useState("");
+    const [ upgradeValueBalance, setBalanceUpgrade ] = useState("");
 
     const servise = new proxyService()
     useEffect(() => {
@@ -31,11 +31,17 @@ const PaginationTabUser = () => {
     })
 
     const changeBalance = () => {
+        setBalanceChange("")
+        setInputValue("")
         servise.changeBalance(checkedNick, changeValueBalance)
-        .then((res) => console.log(res))
+        .then((res) => {
+            console.log(res)
+        })
     }
 
     const upgradeBalance = () => {
+        setBalanceUpgrade("")
+        setInputValue("")
         servise.upgradeBalance(checkedNick ,upgradeValueBalance)
         .then((res) => console.log(res))
     }
@@ -51,6 +57,7 @@ const PaginationTabUser = () => {
                                 type="text"
                                 placeholder="Search users..."
                                 className="search__input user_input"
+                                value={inputValue}
                                 onChange={(event) => setInputValue(event.target.value)}
                             />
                         </div>
@@ -60,6 +67,7 @@ const PaginationTabUser = () => {
                                 type="number"
                                 placeholder="Change balance"
                                 className="search__input balance_input"
+                                value={changeValueBalance}
                                 onChange={(e) => setBalanceChange(e.target.value)}
                             />   
 
@@ -76,6 +84,7 @@ const PaginationTabUser = () => {
                                 type="number"
                                 placeholder="Upgrade balance"
                                 className="search__input balance_input"
+                                value={upgradeValueBalance}
                                 onChange={(e) => setBalanceUpgrade(e.target.value)}
                             /> 
                             <Button
