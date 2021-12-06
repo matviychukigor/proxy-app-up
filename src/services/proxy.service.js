@@ -16,14 +16,36 @@ class Proxy {
         localStorage.removeItem("user_info");
         window.location.assign("/login");
       }
-      if(res.status === 504){
-        console.log("Server hyunya, 504")
-      }
       //throw new Error(`Could not fetch ${url}, received ${res.status}`);
     }
     return await res.json();
   };
 
+  postResource = async (url, data) => {
+    const res = await fetch(`${this._apiBase}${url}`, {
+      method: "POST", 
+      mode: "cors",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("user")}`,
+        "Content-Type": "application/json",
+      },
+    })
+    if (!res.ok) {
+      if(res.status === 403){
+        localStorage.removeItem("user_info");
+        window.location.assign("/login");
+      }
+    }
+    return await res.json();
+  }
+
+  changeBalance(nick, amount) {
+    return this.postResource(`admin/change_balance?nickname=${nick}&amount=${amount}`)
+  }
+  
+  upgradeBalance(nick, amount) {
+    return this.postResource(`admin/send_check?nickname=${nick}&amount=${amount}`)
+  }
   historyProxy() {
     return this.getResource(`pays/userPay`);
   }

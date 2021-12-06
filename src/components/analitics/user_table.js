@@ -21,9 +21,6 @@ const Tabs = () => {
                 setUsers(res)
                 setLoading(false)
             })
-            /* .then((user) => {
-                console.log(users)
-            }) */
     }
 
     const colums = [
@@ -42,7 +39,7 @@ const Tabs = () => {
     })
 
     useEffect(() => {
-        getUsers(1000);
+        getUsers();
     })
 
     return(
@@ -60,13 +57,15 @@ const Tabs = () => {
             {loading ? (
                 <Spinner/>
             ) : (
-                <BootstrapTable
-                    className="tableDark"
-                    keyField="nickname"
-                    data={filterUser}
-                    columns={colums}
-                    pagination={ pagination }
-                />
+                <div>
+                    <BootstrapTable
+                        className="tableDark"
+                        keyField="nickname"
+                        data={filterUser}
+                        columns={colums}
+                        pagination={ pagination }
+                    />
+                </div>
             ) }
         </div>
     )

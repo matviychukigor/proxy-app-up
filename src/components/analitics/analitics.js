@@ -6,6 +6,7 @@ import "./analitics.css";
 
 import InfoCard from "./card";
 import UserTable from "./user_table";
+import PaginationTabUser from "./table_user_pagination";
 
 const Analitics = () => {
 
@@ -17,10 +18,10 @@ const Analitics = () => {
             <InfoCard/>
             <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
                 <Tab eventKey="home" title="Home">
-                    <UserTable/>
+                    <PaginationTabUser/>
                 </Tab>
                 <Tab eventKey="profile" title="Profile">
-                    <InfoCard/>
+                    <UserTable/>
                 </Tab>
             </Tabs>
         </div>

@@ -49,3 +49,44 @@
     color: #fff;
     border-radius: 0.25rem;
 }
+
+.form_inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_user{
+    margin-bottom: 10px;
+}
+
+.user_input{
+    width: 400px;
+}
+
+.form_update{
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+.form_upgrade{
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.balance_btn{
+    width: 150px;
+}
+
+.balance_input{
+    width: 200px;
+}
+
+.search__input{
+    background-color: #3E444A;
+    border: 2px solid #212529;
+    border-radius: 20px;
+    padding: 10px;
+    color: #212529;
+}
