@@ -17,6 +17,7 @@ const PaginationTabUser = () => {
     const [ upgradeValueBalance, setBalanceUpgrade ] = useState("");
 
     const servise = new proxyService()
+    
     useEffect(() => {
         const servise = new proxyService()
         servise.getAllUsers(1000)
@@ -29,6 +30,15 @@ const PaginationTabUser = () => {
     const filterUser = user.filter(user => {
         return user.nickname.includes(inputValue)
     })
+
+    const updateTable = () => {
+        setLoading(true)
+        servise.getAllUsers(1000)
+        .then((res) => {
+            setUser(res)
+            setLoading(false)
+        })
+    }
 
     const changeBalance = () => {
         setBalanceChange("")
@@ -94,7 +104,11 @@ const PaginationTabUser = () => {
                                 Upgrade balance
                             </Button>
                         </div>
-                    
+                        <Button 
+                        onClick={updateTable}
+                        style={{marginBottom: "20px", width: "200px"}}>
+                            Update table
+                        </Button>
                     </div>
                 </form>
             </div>

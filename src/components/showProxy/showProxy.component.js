@@ -237,7 +237,7 @@ export default class ShowProxy extends Component {
     const items = this.tableRender();
     return (
       <div className="proxyWrapper custom_container">
-        <Table className="proxyItem" striped responsive>
+        <Table className="proxyItem" responsive>
           <thead>
             <tr>
               <th>IP</th>
