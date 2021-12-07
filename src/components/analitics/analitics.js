@@ -33,7 +33,9 @@ const Analitics = () => {
                         />
                     </Tab>
                     <Tab eventKey="replenishment" title="User replenishment">
-                        <Replenishment/>
+                        <Replenishment
+                            checkUser={checkUser}
+                        />
                     </Tab>
                 </Tabs>
             </div>

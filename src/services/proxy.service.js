@@ -51,6 +51,10 @@ class Proxy {
     return this.getResource(`admin/user_pays?nickname=${nick}`)
   }
 
+  getUserReplenishment(nick){
+    return this.getResource(`admin/user_payments?nickname=${nick}`)
+  }
+
   historyProxy() {
     return this.getResource(`pays/userPay`);
   }

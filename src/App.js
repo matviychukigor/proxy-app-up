@@ -141,7 +141,7 @@ class App extends Component {
               <li>
                   <i className="fas fa fa-user fa-2x user_detal-img"></i>
                     <span className="nav-text user_info">{currentUser.nickname} </span>
-                    <span className="nav-text user_info">{currentUser.balance} $</span>
+                    <span className="nav-text user_info">{currentUser.balance.toFixed(2)} $</span>
                     
               </li>
               <Button 
