@@ -61,6 +61,10 @@
   margin: 0 auto 15px auto;
 }
 
+.input_block{
+  background-color: rgba(0,0,0,.2);
+}
+
 .donate-btn {
   color: #fff;
   border-radius: 10px;

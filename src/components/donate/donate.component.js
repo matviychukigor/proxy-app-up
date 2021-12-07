@@ -146,7 +146,7 @@ export default function Donate() {
               value={qiwiValue}
               onChange={handlerQIWi}
               disabled={isLabel.qiwiDisable}
-              className="donat-input"
+              className={isLabel.qiwiDisable ? "donat-input input_block" : "donat-input"}
             ></input>
             <Button 
               color="success" 
@@ -192,7 +192,7 @@ export default function Donate() {
               value={cardValue}
               placeholder="0"
               onChange={handlerCard}
-              className="donat-input"
+              className={isLabel.cardDisable ? "donat-input input_block" : "donat-input"}
               disabled={isLabel.cardDisable}
             ></input>
             <Button 
