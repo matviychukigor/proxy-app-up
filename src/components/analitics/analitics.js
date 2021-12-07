@@ -5,9 +5,10 @@ import logo from "../logo.png"
 import "./analitics.css";
 
 /* import InfoCard from "./card"; */
-/* import UserTable from "./user_table"; */
+
 import PaginationTabUser from "./table_user_pagination";
 import UserPays from "./user_pays";
+import Replenishment from "./replenishment";
 
 
 const Analitics = () => {
@@ -30,7 +31,9 @@ const Analitics = () => {
                         <UserPays
                             checkUser={checkUser}
                         />
-                        {/* <UserTable/> */}
+                    </Tab>
+                    <Tab eventKey="replenishment" title="User replenishment">
+                        <Replenishment/>
                     </Tab>
                 </Tabs>
             </div>

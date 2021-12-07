@@ -3,8 +3,6 @@ import { Container, Button } from "reactstrap";
 
 import { buttonsQIWI, buttonsCard } from "./data";
 import Label from "./label.component";
-import CheckQiwi from "./modal_qiwi.component";
-import CheckModal from "./modal_card.component";
 
 import "./donate.css";
 
@@ -23,9 +21,6 @@ export default function Donate() {
 
   const [services] = useState(new proxyService())
 
-  const [checkQiwi, setCheckQiwi] = useState(null);
-  const [checkCard, setCheckCard] = useState(null);
-
   const [qiwiValue, setqiwiValue] = useState("");
   const [cardValue, setCardValue] = useState("");
   const [cryptoValue, setCryptoValue] = useState("");
@@ -33,6 +28,8 @@ export default function Donate() {
     id: "",
     type: "",
     value: "",
+    qiwiDisable: true,
+    cardDisable: true
   });
   const handlerQIWi = (e) => {
     let newMsg = e.currentTarget.value;
@@ -56,6 +53,8 @@ export default function Donate() {
       id: click,
       type: "Qiwi",
       value,
+      qiwiDisable: false,
+      cardDisable: true
     });
   };
   const onClickHandlerCard = (e) => {
@@ -65,31 +64,29 @@ export default function Donate() {
       id: click,
       type: "Card",
       value,
+      qiwiDisable: true,
+      cardDisable: false
     });
   };
 
   const payCrypto = () => {
     services.getCrypto(cryptoValue)
       .then((response) => {
-        window.open(response);
+        window.open(response, "_self");
       })
   }
 
   const payCard = () => {
-    setCheckCard(true)
     services.getCard(cardValue, isLabel.value)
       .then((response) => {
-        setCheckCard(response.order_id)
-        window.open(response.url);
+        window.open(response.url, "_self");
       })
   }
 
   const payQiwi = () => {
-    setCheckQiwi(true)
     services.getQiwi(qiwiValue, isLabel.value)
       .then((response) => {
-        setCheckQiwi(response.order_id)
-        window.open(response.url);
+        window.open(response.url, "_self");
       }) 
   }
 
@@ -148,6 +145,7 @@ export default function Donate() {
               placeholder="0"
               value={qiwiValue}
               onChange={handlerQIWi}
+              disabled={isLabel.qiwiDisable}
               className="donat-input"
             ></input>
             <Button 
@@ -157,7 +155,6 @@ export default function Donate() {
             >
               Pay
             </Button>
-            <CheckQiwi cardVerify={checkQiwi}/>
             <img src={qiwi} alt="qiwi" className="donate-img"></img>
             <img src={yandex} alt="yandex" className="donate-img"></img>
           </div>
@@ -196,6 +193,7 @@ export default function Donate() {
               placeholder="0"
               onChange={handlerCard}
               className="donat-input"
+              disabled={isLabel.cardDisable}
             ></input>
             <Button 
               color="success" 
@@ -204,7 +202,6 @@ export default function Donate() {
             >
               Pay
             </Button>
-            <CheckModal cardVerify={checkCard}/>
             <img src={visa} alt="visa" className="donate-img"></img>
           </div>
 
