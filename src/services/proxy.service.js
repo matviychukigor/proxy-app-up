@@ -46,6 +46,11 @@ class Proxy {
   upgradeBalance(nick, amount) {
     return this.postResource(`admin/send_check?nickname=${nick}&amount=${amount}`)
   }
+
+  getUserPayment(nick){
+    return this.getResource(`admin/user_pays?nickname=${nick}`)
+  }
+
   historyProxy() {
     return this.getResource(`pays/userPay`);
   }

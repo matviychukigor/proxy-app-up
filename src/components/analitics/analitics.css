@@ -12,6 +12,16 @@
     /* justify-content: space-around; */
 }
 
+.form-check{
+    display: flex;
+    justify-content: center;
+}
+
+.table_wrapper{
+    display: flex;
+    justify-content: center;
+}
+
 /* #pageDropDown {
     display: none;
 } */

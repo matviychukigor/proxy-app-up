@@ -33,7 +33,7 @@ class App extends Component {
       showAdminBoard: false,
       currentUser: undefined,
       disabled: false,
-      role: null
+      role: null, 
     };
     this.refaundBalance = this.refaundBalance.bind(this);
   }
@@ -144,7 +144,16 @@ class App extends Component {
                     <span className="nav-text user_info">{currentUser.balance} $</span>
                     
               </li>
-              <Button className="updateBtn updateBtn_phone" disabled={this.state.disabled}  onClick={this.refaundBalance}>Update balance</Button>
+              <Button 
+                className="updateBtn updateBtn_phone" 
+                disabled={this.state.disabled}  
+                onClick={this.refaundBalance}>
+                  Update balance{this.state.disabled ? (
+                    <span className="spinner-border spinner-border-sm"></span>
+                  ): (
+                    " "
+                  )}
+              </Button>
               <li>
                 <a href="https://t.me/GhostProxy_support"  rel="noopener noreferrer" target="_blank">
                   <i className="fa fa-telegram" aria-hidden="true"></i>

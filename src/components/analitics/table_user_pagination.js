@@ -5,21 +5,25 @@ import Spinner from "../spinner/spinner.component";
 
 import { Button } from "reactstrap";
 
-const PaginationTabUser = () => {
+const PaginationTabUser = ({checkUser, setChekUser}) => {
 
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState(true); 
 
     const [inputValue, setInputValue] = useState("");
 
-    const [ checkedNick, setCheckedNick ] = useState("");
+    /* const [ checkedNick, setCheckedNick ] = useState(""); */
     const [ changeValueBalance, setBalanceChange ] = useState("");
     const [ upgradeValueBalance, setBalanceUpgrade ] = useState("");
+
+    const [ disableChange, setDisChange ] = useState(false);
+    const [ disableUpgrade, setDisUpgrade ] = useState(false);
 
     const servise = new proxyService()
     
     useEffect(() => {
         const servise = new proxyService()
+        console.log("user")
         servise.getAllUsers(1000)
         .then((res) => {
             setUser(res)
@@ -32,6 +36,7 @@ const PaginationTabUser = () => {
     })
 
     const updateTable = () => {
+        console.log("user-btn")
         setLoading(true)
         servise.getAllUsers(1000)
         .then((res) => {
@@ -41,19 +46,25 @@ const PaginationTabUser = () => {
     }
 
     const changeBalance = () => {
+        setDisChange(true)
         setBalanceChange("")
         setInputValue("")
-        servise.changeBalance(checkedNick, changeValueBalance)
+        servise.changeBalance(checkUser, changeValueBalance)
         .then((res) => {
             console.log(res)
+            setDisChange(false)
         })
     }
 
     const upgradeBalance = () => {
+        setDisUpgrade(true)
         setBalanceUpgrade("")
         setInputValue("")
-        servise.upgradeBalance(checkedNick ,upgradeValueBalance)
-        .then((res) => console.log(res))
+        servise.upgradeBalance(checkUser ,upgradeValueBalance)
+        .then((res) => {
+            setDisUpgrade(true)
+            console.log(res)
+        })
     }
 
     const header = ["№","id", "nickname", "email", "balance", "Chek_user"];
@@ -84,8 +95,9 @@ const PaginationTabUser = () => {
                             <Button
                             className="btn-class balance_btn"
                             style={{marginLeft: "20px"}}
-                            onClick={changeBalance}>
-                                Update balance
+                            onClick={changeBalance}
+                            disabled={disableChange}>
+                                Update balance {disableChange ? (<span className="spinner-border spinner-border-sm"></span>) : (" ")}
                             </Button>
                         </div>
 
@@ -100,8 +112,9 @@ const PaginationTabUser = () => {
                             <Button
                             className="btn-class balance_btn"
                             style={{marginLeft: "20px"}}
-                            onClick={upgradeBalance}>
-                                Upgrade balance
+                            onClick={upgradeBalance}
+                            disabled={disableUpgrade}>
+                                Upgrade balance {disableUpgrade ? (<span className="spinner-border spinner-border-sm"></span>) : (" ")}
                             </Button>
                         </div>
                         <Button 
@@ -115,37 +128,39 @@ const PaginationTabUser = () => {
             {loading ? (
                 <Spinner/>
             ) : (
-                <table className="table table-striped table-dark">
-                    <thead>
-                        <tr >{header.map((h, i) => <th scope="col" key={i}>{h}</th>)}</tr>
-                    </thead>
-                    <tbody>
-                    {filterUser.map((k, i) => {
-                        return (
-                        <tr key={i}>
-                            <th scope="row">{i+1}</th>
-                            <td>{k.id}</td>
-                            <td>{k.nickname}</td>
-                            <td>{k.email}</td>
-                            <td>{k.balance.toFixed(2)}</td>
-                            <td>
-                                <div className ="form-check">
-                                    <input 
-                                        className="form-check-input position-static" 
-                                        type="radio" 
-                                        name="blankRadio" 
-                                        id="blankRadio1" 
-                                        value={k.nickname}
-                                        onChange={(event) => setCheckedNick(event.target.value)} 
-                                        aria-label="..."
-                                    />
-                                </div>
-                            </td>
-                        </tr>
-                        );
-                    })}
-                    </tbody>
-                </table>
+                <div className="table_wrapper">
+                    <table style={{width: "70%"}} className="table table-striped table-dark">
+                        <thead>
+                            <tr >{header.map((h, i) => <th style={{textAlign: "center"}} scope="col" key={i}>{h}</th>)}</tr>
+                        </thead>
+                        <tbody>
+                        {filterUser.map((k, i) => {
+                            return (
+                            <tr key={i}>
+                                <th style={{width: "20px"}} scope="row">{i+1}</th>
+                                <td style={{width: "50px"}}>{k.id}</td>
+                                <td className="col-4" style={{textAlign: "center"}}> {k.nickname}</td>
+                                <td className="col-4" style={{textAlign: "center"}}>{k.email}</td>
+                                <td className="col-2" style={{textAlign: "center"}}>{k.balance.toFixed(2)}</td>
+                                <td >
+                                    <div className ="form-check">
+                                        <input 
+                                            className="form-check-input position-static" 
+                                            type="radio" 
+                                            name="blankRadio" 
+                                            id="blankRadio1" 
+                                            value={k.nickname}
+                                            onChange={(event) => setChekUser(event.target.value)} 
+                                            aria-label="..."
+                                        />
+                                    </div>
+                                </td>
+                            </tr>
+                            );
+                        })}
+                        </tbody>
+                    </table>
+                </div>
             )} 
         </div>
     )
