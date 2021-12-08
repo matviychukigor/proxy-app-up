@@ -280,7 +280,7 @@ export default class Proxy extends Component {
             <Col md={6} sm={3}>
               <Label for="exampleZip">Zip</Label>
             </Col> */}
-            <Col md={4} sm={4}>
+            <Col md={4} sm={4} className="City">
               <FormGroup className="city-wrapper">
                 <Input
                   key="city"
@@ -292,7 +292,7 @@ export default class Proxy extends Component {
                 />
               </FormGroup>
             </Col>
-            <Col md={4} sm={4} style={{marginLeft: "10px"}}>
+            <Col md={4} sm={4} className="ZIP">
               <FormGroup className="zip-wrapper">
                 <Input
                   key="zip"

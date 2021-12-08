@@ -34,6 +34,7 @@ class App extends Component {
       currentUser: undefined,
       disabled: false,
       role: null, 
+      burger: true
     };
     this.refaundBalance = this.refaundBalance.bind(this);
   }
@@ -89,14 +90,21 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser, role } = this.state;
+    const { currentUser, role, burger } = this.state;
 
     return (
       <div>
         <div className="area"></div>
         
-        <nav className="main-menu">
-        <div className="nav_phone">
+        <nav className={burger ? "main-menu" : "main-menu main-menu-active"}>
+        <img className="ico_phone-burger" src={ghost} alt="ghost"></img>
+        <button onClick={() => {
+              this.setState({burger: !burger})
+              console.log(burger)
+            }} className="icon">
+              <i className="fa fa-bars"></i>
+        </button>
+          <div className="nav_phone">
             <img className="ico_phone" src={ghost} alt="ghost"></img>
             <div className="header_burger">
               <i className="fa fa-bars" aria-hidden="true"></i>
@@ -115,25 +123,25 @@ class App extends Component {
               </li>
               
               <li>
-                <Link to={"/home"} className="nav-text">
+                <Link onClick={() => {this.setState({burger: !burger})}} to={"/home"} className="nav-text">
                   <i className="fa fa-search fa-2x"></i>
                   <span className="nav-text">Search proxy</span>
                 </Link>
               </li>
               <li>
-                <Link to={"/history"} className="nav-text">
+                <Link onClick={() => {this.setState({burger: !burger})}} to={"/history"} className="nav-text">
                   <i className="fa fa-book fa-2x"></i>
                   <span className="nav-text">History</span>
                 </Link>
               </li>
               <li>
-                <Link to={"/donate"} className="nav-text">
+                <Link onClick={() => {this.setState({burger: !burger})}} to={"/donate"} className="nav-text">
                   <i className="fa fa-money fa-2x"></i>
                   <span className="nav-text">Donate</span>
                 </Link>
               </li>
               <li>
-                <Link to={"/FAQ"} className="nav-text">
+                <Link onClick={() => {this.setState({burger: !burger})}} to={"/FAQ"} className="nav-text">
                   <i className="fa fa-question-circle fa-2x"></i>
                   <span className="nav-text">FAQ</span>
                 </Link>
@@ -155,14 +163,14 @@ class App extends Component {
                   )}
               </Button>
               <li>
-                <a href="https://t.me/GhostProxy_support"  rel="noopener noreferrer" target="_blank">
+                <a onClick={() => {this.setState({burger: !burger})}} href="https://t.me/GhostProxy_support"  rel="noopener noreferrer" target="_blank">
                   <i className="fa fa-telegram" aria-hidden="true"></i>
                   <span className="nav-text user_info">Support</span>
                 </a>
               </li>
               {role === "admin" ? (
                 <li>
-                  <Link to={"/Analitics"} className="nav-text">
+                  <Link onClick={() => {this.setState({burger: !burger})}} to={"/Analitics"} className="nav-text">
                     <i className="fa fa-area-chart" aria-hidden="true"></i>
                     <span className="nav-text">Analitics</span>
                   </Link>
@@ -170,34 +178,30 @@ class App extends Component {
               ) : (
                 <div></div>
               )}
-              <div className="logout_wrapper">
-                <ul className="logout">
-                  <li>
-                    <a href="/login" className="nav-text" onClick={this.logOut}>
-                      <i className="fa fa-power-off fa-2x"></i>
-                      <span className="nav-text">LogOut</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <li className="logout_phone">
+                <a href="/login" className="nav-text" onClick={this.logOut}>
+                  <i className="fa fa-power-off fa-2x"></i>
+                  <span className="nav-text">LogOut</span>
+                </a>
+              </li>
             </div>
           ) : (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/login"} className="nav-text">
+                <Link onClick={() => {this.setState({burger: !burger})}} to={"/login"} className="nav-text">
                   <i className="fa fa-sign-in fa-2x"></i>
                   <span className="nav-text">Login</span>
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link to={"/register"} className="nav-text">
+                <Link onClick={() => {this.setState({burger: !burger})}} to={"/register"} className="nav-text">
                   <i className="fa fa-arrow-up fa-2x"></i>
                   <span className="nav-text">Sign Up</span>
                 </Link>
               </li>
               <li>
-                <Link to={"/FAQ"} className="nav-text">
+                <Link onClick={() => {this.setState({burger: !burger})}} to={"/FAQ"} className="nav-text">
                   <i className="fa fa-question-circle fa-2x"></i>
                   <span className="nav-text">FAQ</span>
                 </Link>

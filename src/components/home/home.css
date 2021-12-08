@@ -46,6 +46,10 @@
   margin-left: 30px;
 }
 
+.ZIP{
+  margin-left: 10px;
+}
+
 @media screen and (max-width: 768px) {
   .hide {
     display: none;
@@ -59,6 +63,17 @@
   }
   .form-row {
     margin-left: 15px !important;
+    flex-direction: column;
+  }
+  .ZIP{
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+  .City{
+    margin-right: 10px;
+  }
+  .home-wrapper{
+    margin-left: 0px;
   }
 }
 
