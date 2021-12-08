@@ -1,8 +1,8 @@
 .analitic_wrapper{
     /* margin: 20px 40px; */
     padding: 20px 30px 120px 60px ;
-    height: 100%;
-    background: #3E444A;
+    background: #3E444A no-repeat center center fixed;
+    background-size: cover;
 }
 
 .cardWrapper{
@@ -14,6 +14,10 @@
 
 .analitic_card{
     margin: 20px -180px;
+}
+
+.info_card-wrapper{
+    height: 60vh;
 }
 
 .info_card-analitic{

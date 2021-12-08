@@ -16,11 +16,13 @@ const Replenishment = ({checkUser}) => {
     const header = ["id","merchant_id", "invoice_currency", "date", "invoice_amount", "invoice_id", "invoice_status", "order_id" ];
 
     return(
-        <div>
+        <div className="analitic_wrapper">
             {info === undefined ? (
-                <div className="info_card-analitic">
-                    <div className="card text-white bg-danger mb-3" style= {{maxWidth: "18rem"}}>
-                        <div className="card-header">Check user to see payment of user and try again</div>
+                <div className="info_card-wrapper">
+                    <div className="info_card-analitic">
+                        <div className="card text-white bg-danger mb-3" style= {{maxWidth: "18rem"}}>
+                            <div className="card-header">Check user to see payment of user and try again</div>
+                        </div>
                     </div>
                 </div>
             ):(
