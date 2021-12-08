@@ -23,7 +23,6 @@ const PaginationTabUser = ({checkUser, setChekUser}) => {
     
     useEffect(() => {
         const servise = new proxyService()
-        console.log("user")
         servise.getAllUsers(1000)
         .then((res) => {
             setUser(res)

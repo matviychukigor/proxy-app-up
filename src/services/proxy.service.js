@@ -55,6 +55,10 @@ class Proxy {
     return this.getResource(`admin/user_payments?nickname=${nick}`)
   }
 
+  getInfoForSite() {
+    return this.getResource(`pays/all_statistics`)
+  }
+
   historyProxy() {
     return this.getResource(`pays/userPay`);
   }

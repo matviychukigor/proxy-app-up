@@ -9,7 +9,6 @@ const Replenishment = ({checkUser}) => {
         const servise = new proxyService();
         servise.getUserReplenishment(checkUser)
         .then((res) => {
-            console.log(res.data)
             setInfo(res.data)
         })
     }, [checkUser])
@@ -18,7 +17,13 @@ const Replenishment = ({checkUser}) => {
 
     return(
         <div>
-            {info === undefined ? (<div>Please check user to see payment of user</div>):(
+            {info === undefined ? (
+                <div className="info_card-analitic">
+                    <div className="card text-white bg-danger mb-3" style= {{maxWidth: "18rem"}}>
+                        <div className="card-header">Check user to see payment of user and try again</div>
+                    </div>
+                </div>
+            ):(
                 <div className="table_wrapper">
                     <table style={{width: "70%"}} className="table table-striped table-dark">
                         <thead>

@@ -4,7 +4,7 @@ import { Tab, Tabs } from 'react-bootstrap';
 import logo from "../logo.png"
 import "./analitics.css";
 
-/* import InfoCard from "./card"; */
+import InfoCard from "./card";
 
 import PaginationTabUser from "./table_user_pagination";
 import UserPays from "./user_pays";
@@ -19,7 +19,7 @@ const Analitics = () => {
             <div className="analitic_wrapper">
                 <img style={{ display: "block", margin: "0 auto" }} src={logo} alt="search"></img>
                 
-                {/* <InfoCard/> */}
+                <InfoCard/>
                 <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
                     <Tab eventKey="home" title="See all users">
                         <PaginationTabUser

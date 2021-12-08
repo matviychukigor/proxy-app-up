@@ -8,8 +8,17 @@
 .cardWrapper{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    /* justify-content: space-around; */
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+}
+
+.analitic_card{
+    margin: 20px -180px;
+}
+
+.info_card-analitic{
+    display: flex;
+    justify-content: center;
 }
 
 .form-check{
