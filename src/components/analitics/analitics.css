@@ -5,6 +5,11 @@
     background-size: cover;
 }
 
+.logo_ghost{
+    display: block;
+    margin: 0 auto;
+}
+
 .cardWrapper{
     display: flex;
     flex-direction: row;
@@ -33,6 +38,7 @@
 .table_wrapper{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* #pageDropDown {
@@ -112,4 +118,43 @@
     border-radius: 20px;
     padding: 10px;
     color: #212529;
+}
+
+@media screen and (max-width: 768px) {
+    .logo_ghost{
+        display: none;
+    }
+    .cardWrapper{
+        flex-direction: column;
+    }
+
+    .analitic_card{
+        margin: 0 auto;
+    }
+    .analitic_wrapper{
+        padding: 20px 10px 120px 10px ;
+    }
+    .user_input{
+        width: 350px;
+    }
+
+    .form_update{
+        width: 350px;
+    }
+
+    .form_upgrade{
+        width: 350px;
+    }
+
+    .balance_btn{
+        width: 150px;
+    }
+
+    .balance_input{
+        width: 150px;
+    }
+
+    .card{
+        width: 350px;
+    }
 }

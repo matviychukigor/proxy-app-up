@@ -159,7 +159,7 @@ export default class ShowProxy extends Component {
       } = item;
 
       return (
-        <div className="card">
+        <div key={real_ip} className="card">
           <div className="container_card">
               <div className="conteoner_title">
                   <div className="label_text">IP:</div>
@@ -190,7 +190,7 @@ export default class ShowProxy extends Component {
                   <div className="label_text buy">Buy</div>
                   <button
                     type="button" 
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     onClick={() => {
                       this.modalOnRent(id);
                     }}
@@ -202,7 +202,7 @@ export default class ShowProxy extends Component {
                   <div className="label_text back">Buy back</div>
                   <button 
                     type="button" 
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     onClick={() => {
                       this.modalOnBuy(id);
                     }}
@@ -225,7 +225,6 @@ export default class ShowProxy extends Component {
             </div>
           </div>
         </div>
-        
       );
     });
   }

@@ -17,7 +17,7 @@ const Analitics = () => {
 
     return (
             <div className="analitic_wrapper">
-                <img style={{ display: "block", margin: "0 auto" }} src={logo} alt="search"></img>
+                <img className="logo_ghost" src={logo} alt="search"></img>
                 
                 <InfoCard/>
                 <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">

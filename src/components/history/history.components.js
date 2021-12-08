@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import { Table, Button } from "reactstrap";
-
 import Spinner from "../spinner/spinner.component";
 
 import proxyService from "../../services/proxy.service";
@@ -11,6 +9,7 @@ import ghost from "../../ghost.ico";
 
 import "./history.css";
 import "../modal/modal.css";
+import "../showProxy/card.css"
 
 export default class History extends Component {
   proxyService = new proxyService();
@@ -85,58 +84,67 @@ export default class History extends Component {
       const { date, city, typename, proxy, region, id, price } = item;
 
       return (
-        <tr key={id} className="historyItem">
-          <th scope="row">{date}</th>
-          <td>{city}</td>
-          <td>{typename}</td>
-          <td>{proxy}</td>
-          <td>{region}</td>
-          <td>{price} $</td>
-          <td>
-            <Button
-              onClick={() => {
-                this.modalOnResell(proxy);
-              }}
-              className="refBtn"
-              style={{ width: "80px", height: "55px" }}
-              color="primary"
-              size="lg"
-            >
-              {price}$
-            </Button>{" "}
-            <div id="myModal" className={this.state.modalClass}>
-              <div className="modal-content" style={{ width: "45%" }}>
-                <span
-                  onClick={() => {
-                    this.modalClosed();
-                  }}
-                  className="close"
-                >
-                  &times;
-                </span>
-                <span className="closeText">{this.showMsgResell()}</span>
+        <div key={id} className="card">
+          <div className="container_card">
+              <div className="conteoner_title">
+                  <div className="label_text">Date:</div>
+                  <div className="label_text">City:</div>
+                  <div className="label_text">Type:</div>
+                  <div className="label_text">Proxy:</div>
+                  <div className="label_text">Region:</div>
+                  <div className="label_text">Price:</div>
               </div>
-            </div>
-          </td>
-          <td>
-            <Button
-              /* onClick={() => {this.modalOnRent(id)}}  */
-              className="refBtn"
-              style={{ width: "80px", fontSize: "10px", height: "55px" }}
-              color="primary"
-              size="lg"
-            >
-              REFAUND
-            </Button>{" "}
-            {/*  <div id="myModal" className={this.state.modalClass}>
-                            <div className="modal-content"
-                                  style={{width: "45%"}}>
-                                <span onClick={() => {this.modalClosed()}} className="close">&times;</span>
-                                <span className="closeText">{this.showMsgRef()}</span>
-                            </div>
-                        </div> */}
-          </td>
-        </tr>
+
+              <div className="conteoner_proxy">
+                  <div className="proxy_text">{date}</div>
+                  <div className="proxy_text">{city}</div>
+                  <div className="proxy_text">{typename}</div>
+                  <div className="proxy_text">{proxy}</div>
+                  <div className="proxy_text">{region}</div>
+                  <div className="proxy_text">{price}$</div>
+              </div>
+              
+          </div>
+          <hr style={{color: "#fff", height: "2px", margin: "5px"}}/>
+          <div className="card_btn">
+              <div className="btn_buy">
+                <div className="label_text buy">Prolong: </div>
+                  <button
+                    type="button" 
+                    className="btn btn-primary"
+                    onClick={() => {
+                      this.modalOnResell(proxy);
+                    }}      
+                  >
+                  {price}$
+                  </button>
+
+                  <div id="myModal" className={this.state.modalClass}>
+                  <div className="modal-content" style={{ width: "45%" }}>
+                    <span
+                      onClick={() => {
+                        this.modalClosed();
+                      }}
+                      className="close"
+                    >
+                      &times;
+                    </span>
+                    <span className="closeText">{this.showMsgResell()}</span>
+                  </div>
+
+                </div>
+              </div>
+              <div className="btn_buyBack">
+                  <div className="label_text back">Refaund: </div>
+                  <button 
+                    type="button" 
+                    className="btn btn-primary"
+                  >
+                  REFAUND
+                  </button>
+              </div>
+          </div>
+        </div>
       );
     });
   }
@@ -190,21 +198,9 @@ export default class History extends Component {
       <div className="historyWrapper">
         <img className="history-logo hide" src={logo} alt="search" />
         <img className="history-logo show_small-img" src={ghost} alt="search" />
-        <Table dark className="historyItem" striped responsive>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>City</th>
-              <th>Type</th>
-              <th>Proxy</th>
-              <th>Region</th>
-              <th>Price</th>
-              <th>Prolong</th>
-              <th>Refaund</th>
-            </tr>
-          </thead>
-          <tbody>{items}</tbody>
-        </Table>
+        <div className="test_wrapper">
+          {items}
+        </div>
       </div>
     );
   }
