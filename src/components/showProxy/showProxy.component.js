@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 
-import { Table, Button } from "reactstrap";
-
 import proxyService from "../../services/proxy.service";
 
 import Spinner from "../spinner/spinner.component";
 
 import "../modal/modal.css";
+import "./card.css"
 
 
 export default class ShowProxy extends Component {
@@ -160,55 +159,73 @@ export default class ShowProxy extends Component {
       } = item;
 
       return (
-        <tr key={id} className="proxyItem">
-          <th scope="row">{real_ip}</th>
-          <td>{domain}</td>
-          <th>{city}</th>
-          <td>{isp}</td>
-          <td>{speed}</td>
-          <td>{zip}</td>
-          <td>{region}</td>
-          <td>{typename}</td>
-          <td>
-            <div className="buyBtn">
-              <Button
-                onClick={() => {
-                  this.modalOnRent(id);
-                }}
-                className="priceBtnRent"
-                style={{ width: "80px" }}
-                color="primary"
-                size="lg"
-              >
-                {rent_price}$
-              </Button>{" "}
-              <Button
-                onClick={() => {
-                  this.modalOnBuy(id);
-                }}
-                className="priceBtnBuy"
-                style={{ width: "80px" }}
-                color="primary"
-                size="lg"
-              >
-                {price}$
-              </Button>{" "}
-              <div id="myModal" className={this.state.modalClass}>
-                <div className="modal-content">
-                  <span
-                    onClick={() => {
-                      this.modalClosed();
-                    }}
-                    className="close"
-                  >
-                    &times;
-                  </span>
-                  <span className="closeText">{this.showSellProxy()}</span>
-                </div>
+        <div className="card">
+          <div className="container_card">
+              <div className="conteoner_title">
+                  <div className="label_text">IP:</div>
+                  <div className="label_text">Domain:</div>
+                  <div className="label_text">City:</div>
+                  <div className="label_text">ISP:</div>
+                  <div className="label_text">Speed:</div>
+                  <div className="label_text">ZIP:</div>
+                  <div className="label_text">Region:</div>
+                  <div className="label_text">Type:</div>
               </div>
+
+              <div className="conteoner_proxy">
+                  <div className="proxy_text">{real_ip}</div>
+                  <div className="proxy_text">{domain}</div>
+                  <div className="proxy_text">{city}</div>
+                  <div className="proxy_text">{isp}</div>
+                  <div className="proxy_text">{speed}</div>
+                  <div className="proxy_text">{zip}</div>
+                  <div className="proxy_text">{region}</div>
+                  <div className="proxy_text">{typename}</div>
+              </div>
+              
+          </div>
+          <hr style={{color: "#fff", height: "2px", margin: "5px"}}/>
+          <div className="card_btn">
+              <div className="btn_buy">
+                  <div className="label_text buy">Buy</div>
+                  <button
+                    type="button" 
+                    class="btn btn-primary"
+                    onClick={() => {
+                      this.modalOnRent(id);
+                    }}
+                  >
+                  {rent_price}$
+                  </button>
+              </div>
+              <div className="btn_buyBack">
+                  <div className="label_text back">Buy back</div>
+                  <button 
+                    type="button" 
+                    class="btn btn-primary"
+                    onClick={() => {
+                      this.modalOnBuy(id);
+                    }}
+                  >
+                  {price}$
+                  </button>
+              </div>
+          </div>
+          <div id="myModal" className={this.state.modalClass}>
+            <div className="modal-content">
+              <span
+                onClick={() => {
+                  this.modalClosed();
+                }}
+                className="close"
+              >
+                &times;
+              </span>
+              <span className="closeText">{this.showSellProxy()}</span>
             </div>
-          </td>
-        </tr>
+          </div>
+        </div>
+        
       );
     });
   }
@@ -237,22 +254,9 @@ export default class ShowProxy extends Component {
     const items = this.tableRender();
     return (
       <div className="proxyWrapper custom_container">
-        <Table className="proxyItem" responsive>
-          <thead>
-            <tr>
-              <th>IP</th>
-              <th>Domain</th>
-              <th>City</th>
-              <th>ISP</th>
-              <th>Speed</th>
-              <th>ZIP</th>
-              <th>Region</th>
-              <th>Type</th>
-              <th>Buy/Buy back</th>
-            </tr>
-          </thead>
-          <tbody>{items}</tbody>
-        </Table>
+        <div className="test_wrapper">
+          {items}
+        </div>
       </div>
     );
   }

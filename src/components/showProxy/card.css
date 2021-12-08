@@ -1,0 +1,63 @@
+.test_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 420px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    background-color: #3E444A;
+    transition: 0.3s;
+    padding: 10px 15px 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.9);
+}
+
+.conteoner_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.label_text{
+    color: #fff
+}
+
+.proxy_text{
+    color: #fff;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.container_card {
+    display: flex;
+    padding: 2px 8px;
+}
+
+.buy{
+    margin-right: 40px;
+}
+
+.btn_buy{
+    display: flex;
+    align-items: center
+}
+
+.btn_buyBack{
+    display: flex;
+    align-items: center
+}
+
+.back{
+    margin-right: 25px;
+}
+
+.card_btn{
+    display: flex;
+    justify-content: space-evenly;
+}
