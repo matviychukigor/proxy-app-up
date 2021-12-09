@@ -157,4 +157,10 @@
     .card{
         width: 350px;
     }
+    .label_text{
+        font-size: 14px;
+    }
+    .proxy_text{
+        font-size: 15px;
+    }
 }
