@@ -13,8 +13,6 @@ const Replenishment = ({checkUser}) => {
         })
     }, [checkUser])
 
-    const header = ["id","merchant_id", "invoice_currency", "date", "invoice_amount", "invoice_id", "invoice_status", "order_id" ];
-
     return(
         <div className="analitic_wrapper">
             {info === undefined ? (
@@ -27,32 +25,38 @@ const Replenishment = ({checkUser}) => {
                 </div>
             ):(
                 <div className="table_wrapper">
-                    <table style={{width: "70%"}} className="table table-striped table-dark">
-                        <thead>
-                            <tr >{header.map((h, i) => <th style={{textAlign: "center", width: "60px"}} scope="col" key={i}>{h}</th>)}</tr>
-                        </thead>
-                        <tbody>
-                        {info.map((k, i) => {
-                            return (
-                            <tr key={i}>
-                                {/* <th scope="row">{i+1}</th> */}
-                                <td>{k.id}</td>
-                                <td style={{textAlign: "center"}}>{k.merchant_id === null ? "---" : k.merchant_id}</td>
-                                <td style={{textAlign: "center"}}>{k.invoice_currency === null ? "---" : k.invoice_currency}</td>
-                                <td style={{textAlign: "center"}}>{k.date_time}</td>
-                                <td style={{textAlign: "center"}}>{k.invoice_amount}</td>
-                                {/* <td style={{textAlign: "center"}}>{k.invoice_created}</td>
-                                <td style={{textAlign: "center"}}>{k.invoice_currency}</td>
-                                <td style={{textAlign: "center"}}>{k.invoice_expires}</td> */}
-                                <td style={{textAlign: "center"}}>{k.invoice_id === null ? "---" : k.invoice_id}</td>
-                                <td style={{textAlign: "center"}}>{k.invoice_status === null ? "---" : k.invoice_status}</td>
-                                {/* <td style={{textAlign: "center"}}>{k.invoice_url}</td> */}
-                                <td style={{textAlign: "center"}}>{k.order_id}</td>
-                            </tr>
-                            );
-                        })}
-                        </tbody>
-                    </table>
+                    {info.map((k, i) => {
+                    return(
+                    <div key={i} className="test_wrapper">
+                        <div  className="card">
+                            <div className="container_card">
+                                <div className="conteoner_title">
+                                    <div className="label_text">ID:</div>
+                                    <div className="label_text">merchant_id:</div>
+                                    <div className="label_text">invoice_currency:</div>
+                                    <div className="label_text">date:</div>
+                                    <div className="label_text">invoice_amount:</div>
+                                    <div className="label_text">invoice_id:</div>
+                                    <div className="label_text">invoice_status:</div>
+                                    <div className="label_text">order_id:</div>
+                                </div>
+
+                                <div className="conteoner_proxy">
+                                    <div className="proxy_text">{k.id}</div>
+                                    <div className="proxy_text">{k.merchant_id === null ? "---" : k.merchant_id}</div>
+                                    <div className="proxy_text">{k.invoice_currency === null ? "---" : k.invoice_currency}</div>
+                                    <div className="proxy_text">{k.date_time.slice(0, -7)}</div>
+                                    <div className="proxy_text">{k.invoice_amount}</div>
+                                    <div className="proxy_text">{k.invoice_id === null ? "---" : k.invoice_id}</div>
+                                    <div className="proxy_text">{k.invoice_status === null ? "---" : k.invoice_status}</div>
+                                    <div className="proxy_text">{k.order_id}</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    );
+                })}
                 </div>
             )}
         </div>

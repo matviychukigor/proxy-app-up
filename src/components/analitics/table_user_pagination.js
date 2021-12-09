@@ -130,42 +130,43 @@ const PaginationTabUser = ({checkUser, setChekUser}) => {
             ) : (
                 
                 <div className="table_wrapper">
+
                     {filterUser.map((k, i) => {
                     return(
-                        <div key={i} className="test_wrapper">
-                    <div  className="card">
-                        <div className="container_card">
-                            <div className="conteoner_title">
-                                <div className="label_text">№:</div>
-                                <div className="label_text">ID:</div>
-                                <div className="label_text">NickName:</div>
-                                <div className="label_text">email:</div>
-                                <div className="label_text">balance:</div>
-                            </div>
+                    <div key={i} className="test_wrapper">
+                        <div  className="card">
+                            <div className="container_card">
+                                <div className="conteoner_title">
+                                    <div className="label_text">№:</div>
+                                    <div className="label_text">ID:</div>
+                                    <div className="label_text">NickName:</div>
+                                    <div className="label_text">email:</div>
+                                    <div className="label_text">balance:</div>
+                                </div>
 
-                            <div className="conteoner_proxy">
-                                <div className="proxy_text">{i+1}</div>
-                                <div className="proxy_text">{k.id}</div>
-                                <div className="proxy_text">{k.nickname}</div>
-                                <div className="proxy_text">{k.email}</div>
-                                <div className="proxy_text">{k.balance.toFixed(2)}</div>
+                                <div className="conteoner_proxy">
+                                    <div className="proxy_text">{i+1}</div>
+                                    <div className="proxy_text">{k.id}</div>
+                                    <div className="proxy_text">{k.nickname}</div>
+                                    <div className="proxy_text">{k.email}</div>
+                                    <div className="proxy_text">{k.balance.toFixed(2)}</div>
+                                </div>
+                                
                             </div>
-                            
-                        </div>
-                        <hr style={{color: "#fff", height: "2px", margin: "5px"}}/>
-                        <div className="card_btn">
-                            <div className ="form-check">
-                                <input 
-                                    className="form-check-input position-static" 
-                                    type="radio" 
-                                    name="blankRadio" 
-                                    id="blankRadio1" 
-                                    value={k.nickname}
-                                    onChange={(event) => setChekUser(event.target.value)} 
-                                    aria-label="..."
-                                />
+                            <hr style={{color: "#fff", height: "2px", margin: "5px"}}/>
+                            <div className="card_btn">
+                                <div className ="form-check">
+                                    <input 
+                                        className="form-check-input position-static" 
+                                        type="radio" 
+                                        name="blankRadio" 
+                                        id="blankRadio1" 
+                                        value={k.nickname}
+                                        onChange={(event) => setChekUser(event.target.value)} 
+                                        aria-label="..."
+                                    />
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                     );

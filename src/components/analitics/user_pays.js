@@ -14,8 +14,6 @@ const UserPays = ({checkUser}) => {
         })
     }, [checkUser])
 
-    const header = ["№","id", "Type pay", "Acount", "Date", "Amount", "Buyer", "City", "ProxyID", "Region", "Ping", "Origin price", "res bal", "Type name", "ZIP" ];
-
     return(
         <div>
             {info === undefined ? (
@@ -28,37 +26,53 @@ const UserPays = ({checkUser}) => {
                 </div>
                 ):(
                 <div className="table_wrapper">
-                    <table style={{width: "70%"}} className="table table-striped table-dark">
-                        <thead>
-                            <tr >{header.map((h, i) => <th style={{textAlign: "center"}} scope="col" key={i}>{h}</th>)}</tr>
-                        </thead>
-                        <tbody>
-                        {info.map((k, i) => {
-                            return (
-                            <tr key={i}>
-                                <th scope="row">{i+1}</th>
-                                <td>{k.id}</td>
-                                <td style={{textAlign: "center"}}> {k.type_pay}</td>
-                                <td style={{textAlign: "center"}}>{k.account}</td>
-                                <td style={{textAlign: "center"}}>{k.date}</td>
-                                <td style={{textAlign: "center"}}>{k.ammount.toFixed(2)}</td>
-                                <td style={{textAlign: "center"}}>{k.buyer}</td>
-                                <td style={{textAlign: "center"}}>{k.city}</td>
-                                <td style={{textAlign: "center"}}>{k.id_proxy}</td>
-                                <td style={{textAlign: "center"}}>{k.region}</td>
-                                <td style={{textAlign: "center"}}>{k.ping}</td>
-                                <td style={{textAlign: "center"}}>{k.origin_price}</td>
-                                <td style={{textAlign: "center"}}>{k.res_balance.toFixed(2)}</td>
-                                <td style={{textAlign: "center"}}>{k.typename}</td>
-                                <td style={{textAlign: "center"}}>{k.zip}</td>
-                            </tr>
-                            );
-                        })}
-                        </tbody>
-                    </table>
+                    {info.map((k, i) => {
+                    return(
+                    <div key={i} className="test_wrapper">
+                        <div  className="card">
+                            <div className="container_card">
+                                <div className="conteoner_title">
+                                    <div className="label_text">№:</div>
+                                    <div className="label_text">ID:</div>
+                                    <div className="label_text">Type pay:</div>
+                                    <div className="label_text">Account:</div>
+                                    <div className="label_text">Date:</div>
+                                    <div className="label_text">Amount:</div>
+                                    <div className="label_text">Buyer:</div>
+                                    <div className="label_text">City:</div>
+                                    <div className="label_text">ProxyID:</div>
+                                    <div className="label_text">Region:</div>
+                                    <div className="label_text">Ping:</div>
+                                    <div className="label_text">Origin price:</div>
+                                    <div className="label_text">Res bal:</div>
+                                    <div className="label_text">Type name:</div>
+                                    <div className="label_text">ZIP:</div>
+                                </div>
+
+                                <div className="conteoner_proxy">
+                                    <div className="proxy_text">{i+1}</div>
+                                    <div className="proxy_text">{k.id}</div>
+                                    <div className="proxy_text">{k.type_pay}</div>
+                                    <div className="proxy_text">{k.account}</div>
+                                    <div className="proxy_text">{`${k.date.split("T")[0]} ${k.date.split("T")[1].slice(0, -7)}`}</div>
+                                    <div className="proxy_text">{k.ammount.toFixed(2)}</div>
+                                    <div className="proxy_text">{k.buyer}</div>
+                                    <div className="proxy_text">{k.city}</div>
+                                    <div className="proxy_text">{k.id_proxy}</div>
+                                    <div className="proxy_text">{k.region}</div>
+                                    <div className="proxy_text">{k.ping}</div>
+                                    <div className="proxy_text">{k.origin_price}</div>
+                                    <div className="proxy_text">{k.res_balance.toFixed(2)}</div>
+                                    <div className="proxy_text">{k.typename}</div>
+                                    <div className="proxy_text">{k.zip}</div>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                    );
+                    })}
                 </div>
             )}
-            
         </div>
     )
 }
