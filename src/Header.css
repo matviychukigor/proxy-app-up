@@ -146,9 +146,12 @@ nav.main-menu.expanded {
 }
 
 @media screen and (max-width: 769px) {
+  .fa{
+    height: 45px;
+  }
 
   .main-menu-active{
-    min-height: 650px;
+    min-height: 520px;
   }
 
   .logo_img-big{
