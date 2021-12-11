@@ -34,9 +34,10 @@ export default class History extends Component {
   //Modal to ressel
 
   modalOnResell(ip) {
+    console.log(ip)
     this.setState({ modalClass: "modal-open" });
       this.proxyService
-      .resellProxy(ip)
+      .prolong()
       .then((ref) => {
         console.log(ref);
         if(ref.error === 0){

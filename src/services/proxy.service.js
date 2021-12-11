@@ -67,6 +67,10 @@ class Proxy {
     return this.getResource(`base/rent/${ip}`);
   }
 
+  prolong(ip){
+    return this.getResource(`base/prolong?ip=51.81.122.149%3A45233`);
+  }
+
   buyProxy(id) {
     return this.getResource(`base/buy/${id}`);
   }
