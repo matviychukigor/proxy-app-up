@@ -101,8 +101,7 @@ export default class ShowProxy extends Component {
     this.setState({ modalClass: "modal-open" });
       this.proxyService.resellProxy(ip)
       .then((sell) => {
-        console.log(sell)
-        if (sell.msg === "insufficient funds") {
+        if (sell.MESSAGE === "insufficient funds") {
           this.setState({ sellProxy: sell.MESSAGE });
         } else {
           this.setState({ sellProxy: sell.value });
@@ -113,7 +112,6 @@ export default class ShowProxy extends Component {
   modalOnBuy(id) {
     this.setState({ modalClass: "modal-open" });
       this.proxyService.buyProxy(id).then((sell) => {
-        console.log(sell)
         if (sell.MESSAGE === "insufficient funds") {
           this.setState({ sellProxy: sell.MESSAGE });
         } else {
