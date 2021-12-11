@@ -38,6 +38,7 @@ export default class ShowProxy extends Component {
     this.proxyService
       .getContinent(proxyLand, typeIp, blacklist, City, Zip, selectLand)
       .then((proxys) => {
+        console.log(proxys)
         if(proxys.status === 0){
           console.log(proxys);
           const prox = proxys.data;
@@ -62,11 +63,11 @@ export default class ShowProxy extends Component {
           });
           this.props.getSpinner(!this.state.proxysList);
         }
-        if(proxys.error === 5) {
+        if(proxys.status === 1) {
           this.setState({not_found: true, disabled: true})
           this.props.getSpinner(false) 
         } 
-        if(proxys.error > 0 && proxys.error !== 5) {
+        if(proxys.status > 0 && proxys.status !== 1) {
           this.setState({error: true, disabled: true})
           this.props.getSpinner(false) 
         } 

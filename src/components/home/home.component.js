@@ -49,7 +49,7 @@ export default class Proxy extends Component {
       selectLand: "all",
       typeIp: "all",
       blacklist: "all",
-      blacklistValue: 6,
+      blacklistValue: "all",
       valueType: "Residential",
       typeIpValue: "all",
       serverError: false

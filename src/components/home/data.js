@@ -83,6 +83,6 @@ export const dropDownValueRight = [
   {
     id: "4",
     name: "Black 50% OFF",
-    value: "black_50%_off",
+    value: "black_50_off",
   },
 ];
