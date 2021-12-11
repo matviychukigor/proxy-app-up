@@ -50,9 +50,13 @@
   margin-left: 10px;
 }
 
+.main_btn{
+  margin-right: 15px;
+}
+
 @media screen and (max-width: 768px) {
   .hide {
-    display: none;
+    width: 300px;
   } 
   .show {
     display: block;
@@ -94,7 +98,7 @@
 
 @media screen and (max-width: 545px) {
   .nav-item {
-    margin: 10px 0px !important;
+    margin: 10px 10px !important;
   }
   .city-wrapper {
     margin: 10px 0px;

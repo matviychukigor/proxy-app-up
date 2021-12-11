@@ -56,6 +56,13 @@
   margin: 0 0 6px 10px;
 }
 
+@media screen and (max-width: 769px) {
+  .list__item{
+    font-size: 12px;
+  }
+}
+
+
 @media screen and (max-width: 426px) {
   .list__item{
     width: 95px;

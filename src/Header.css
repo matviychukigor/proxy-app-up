@@ -46,6 +46,11 @@
   margin-left: 5px;
 }
 
+.logo_img-big{
+  display: block;
+  margin: 0 auto;
+}
+
 .main-menu:hover,
 nav.main-menu.expanded {
   width: 250px;
@@ -136,10 +141,22 @@ nav.main-menu.expanded {
   display: none;
 }
 
+.card_color{
+  background-color: red
+}
+
 @media screen and (max-width: 769px) {
 
   .main-menu-active{
     min-height: 650px;
+  }
+
+  .logo_img-big{
+    display: none;
+  }
+
+  .login_card-wrapper{
+    margin-top: 80px;
   }
 
   .main-menu:not(.nohover){

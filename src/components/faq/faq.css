@@ -2,3 +2,21 @@
     margin: 0 40px ;
     padding-left: 30px;
 }
+
+.logo_img-FAQ{
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 769px) {
+    .FAQ{
+        margin: 0 10px;
+        padding-left: 0px;
+    }
+    .logo_img-FAQ{
+        width: 300px;
+    }
+    .faqText{
+        text-align: justify;
+    }
+}

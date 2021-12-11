@@ -21,7 +21,6 @@ import ShowProxy from "../showProxy/showProxy.component";
 
 import searchimg from "../search-worldwide.png";
 import logo from "../logo.png";
-import ghost from "../../ghost.ico";
 
 import proxyService from "../../services/proxy.service";
 
@@ -182,11 +181,10 @@ export default class Proxy extends Component {
     return (
       <div className="home-wrapper">
         <img className="home-logo hide" src={logo} alt="search" />
-        <img className="home-logo show_small-img" src={ghost} alt="search" />
         <Nav tabs>
           {buttonsData.map((item) => {
             return (
-              <NavItem key={item.id}>
+              <NavItem className="main_btn" key={item.id}>
                 <Button
                   className="mr-2 btns"
                   active={this.state.activeTab === item.id}

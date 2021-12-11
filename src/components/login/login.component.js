@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import AuthService from "../../services/auth.service";
 
 import logo from "../logo.png";
+import "../../Header.css";
 
 const required = (value) => {
   if (!value) {
@@ -99,79 +100,81 @@ export default class Login extends Component {
     return (
       <div className="col-md-12">
         <img
-          style={{ display: "block", margin: "0 auto" }}
+          className="logo_img-big"
           src={logo}
           alt="search"
         ></img>
-        <div className="card card-container">
-          <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          />
-
-          <Form
-            onSubmit={this.handleLogin}
-            ref={(c) => {
-              this.form = c;
-            }}
-          >
-            <div className="form-group">
-              <label htmlFor="username">Email</label>
-              <Input
-                type="text"
-                className="form-control"
-                name="username"
-                value={this.state.username}
-                onChange={this.onChangeUsername}
-                validations={[required]}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <Input
-                type="password"
-                className="form-control"
-                name="password"
-                value={this.state.password}
-                onChange={this.onChangePassword}
-                validations={[required]}
-              />
-            </div>
-
-            <div className="form-group">
-              <button
-                className="btn btn-primary btn-block mt-3"
-                style={{width: "100%"}}
-                disabled={this.state.loading}
-              >
-                {this.state.loading && (
-                  <span className="spinner-border spinner-border-sm" ></span>
-                )}
-                <span>Login</span>
-              </button>
-              <Link to={"/register"} className="nav-text">
-                <div className="form-group">
-                  <button className="btn btn-block" style={{width: "100%"}}>Register</button>
-                </div>
-              </Link>
-            </div>
-
-            {this.state.message && (
-              <div className="form-group">
-                <div className="alert alert-danger" role="alert">
-                  {this.state.message}
-                </div>
-              </div>
-            )}
-            <CheckButton
-              style={{ display: "none" }}
-              ref={(c) => {
-                this.checkBtn = c;
-              }}
+        <div className="login_card-wrapper">
+          <div className="card card-container">
+            <img
+              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+              alt="profile-img"
+              className="profile-img-card"
             />
-          </Form>
+
+            <Form
+              onSubmit={this.handleLogin}
+              ref={(c) => {
+                this.form = c;
+              }}
+            >
+              <div className="form-group">
+                <label htmlFor="username">Email</label>
+                <Input
+                  type="text"
+                  className="form-control"
+                  name="username"
+                  value={this.state.username}
+                  onChange={this.onChangeUsername}
+                  validations={[required]}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <Input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.onChangePassword}
+                  validations={[required]}
+                />
+              </div>
+
+              <div className="form-group">
+                <button
+                  className="btn btn-primary btn-block mt-3"
+                  style={{width: "100%"}}
+                  disabled={this.state.loading}
+                >
+                  {this.state.loading && (
+                    <span className="spinner-border spinner-border-sm" ></span>
+                  )}
+                  <span>Login</span>
+                </button>
+                <Link to={"/register"} className="nav-text">
+                  <div className="form-group">
+                    <button className="btn btn-block" style={{width: "100%"}}>Register</button>
+                  </div>
+                </Link>
+              </div>
+
+              {this.state.message && (
+                <div className="form-group">
+                  <div className="alert alert-danger" role="alert">
+                    {this.state.message}
+                  </div>
+                </div>
+              )}
+              <CheckButton
+                style={{ display: "none" }}
+                ref={(c) => {
+                  this.checkBtn = c;
+                }}
+              />
+            </Form>
+          </div>
         </div>
       </div>
     );
