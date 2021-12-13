@@ -38,9 +38,7 @@ export default class ShowProxy extends Component {
     this.proxyService
       .getContinent(proxyLand, typeIp, blacklist, City, Zip, selectLand)
       .then((proxys) => {
-        console.log(proxys)
         if(proxys.status === 0){
-          console.log(proxys);
           const prox = proxys.data;
           let proxyList = [];
           for (let i in prox) {

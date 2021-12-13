@@ -168,7 +168,7 @@ export default class History extends Component {
           });
         }
         this.setState({
-          historyList: historyList,
+          historyList: historyList.reverse(),
         });
       })
       .catch((error) => {

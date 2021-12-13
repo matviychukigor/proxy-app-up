@@ -13,7 +13,6 @@ const UserPayments = () => {
         servise.getAllPayments()
         .then((res) => {
             setPayments(res.data)
-            console.log(res.data)
             setLoading(false)
         })
     }, [])

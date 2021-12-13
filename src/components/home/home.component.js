@@ -45,7 +45,7 @@ export default class Proxy extends Component {
       searchProxy: false, //state який міняє картінку на спінер коли іде поіск проксі
       Zip: "all",
       City: "all",
-      proxyLand: "USA",
+      proxyLand: "europe",
       selectLand: "all",
       typeIp: "all",
       blacklist: "all",
@@ -54,12 +54,8 @@ export default class Proxy extends Component {
       typeIpValue: "all",
       serverError: false
     };
-    this.updateService();
     this.toggle = this.toggle.bind(this);
-    this.updateService = this.updateService.bind(this);
-    this.maxId = 0;
     this.searchBtn = this.searchBtn.bind(this);
-    this.propsTest = this.propsTest.bind(this);
     this.updateCity = this.updateCity.bind(this);
     this.updateZIP = this.updateZIP.bind(this);
     this.getSpinner = this.getSpinner.bind(this);
@@ -69,44 +65,6 @@ export default class Proxy extends Component {
 
   componentDidMount() {
     document.title = "Home";
-  }
-
-  updateService() {
-    const country = "america";
-    this.proxyService
-      .getLand(country)
-      .then((land) => {
-        const lad = land;
-        let buff = [];
-        for (let i in lad) {
-          buff.push({
-            [i]: lad[i],
-            id: this.maxId++,
-          });
-        }
-        this.setState(({ lands }) => {
-          return {
-            lands: buff,
-          };
-        });
-      })
-  }
-
-  propsTest() {
-    console.log(
-      "SELECT Land(Radio BTN): " +
-        this.state.selectLand /* радіо-бтн */ +
-        "Type IP " +
-        this.state.typeIpValue +
-        "MATERIC: " +
-        this.state.proxyLand /* верхня кнопка {usa, africa, ...}*/ +
-        " Blacklist: " +
-        this.state.blacklistValue +
-        "City: " +
-        this.state.City +
-        "Zip: " +
-        this.state.Zip
-    );
   }
 
   updateCity(e) {

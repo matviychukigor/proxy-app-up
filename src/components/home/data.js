@@ -1,22 +1,22 @@
 export const buttonsData = [
   {
     id: "1",
-    name: "USA",
-    value: "USA",
-  },
-  {
-    id: "2",
     name: "EU",
     value: "europe",
   },
   {
+    id: "2",
+    name: "USA",
+    value: "USA",
+  },
+  {
     id: "3",
-    name: "AMERICA",
+    name: "South America",
     value: "america",
   },
   {
     id: "4",
-    name: "RUSSIA",
+    name: "Cost europe",
     value: "russia",
   },
   {

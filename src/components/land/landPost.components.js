@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { countries, } from "./countries";
 
 import proxyService from "../../services/proxy.service";
 import Spinner from "../spinner/spinner.component";
@@ -21,7 +22,26 @@ export default class LandPost extends Component {
   };
 
   componentDidMount() {
-    this.proxyService.getLand(this.props.getLand).then((items) => {
+    const arrayItems = countries.map((item, index) => {
+      return {country: item.country, emoji: item.emoji, post_code: item.post, region: item.region, id: index++}
+    })
+
+    let filterLand = []
+    arrayItems.map(item => {
+      if (this.props.getLand === item.region){
+        filterLand.push(item)
+      }
+      return item
+    })
+    
+    filterLand.map((item) => {
+        this.setState({
+          itemList: filterLand,
+        })
+        return item
+    })
+    /* this.proxyService.getLand(this.props.getLand).then((items) => {
+      console.log(items)
       if (Array.isArray(items)) {
         const arrayItems = items.map((item, index) => {
           return { country: item, post_code: item, id: index++ };
@@ -42,12 +62,12 @@ export default class LandPost extends Component {
           itemList: objectItems,
         });
       }
-    });
+    }); */
   }
 
   renderItems() {
     return this.state.itemList.map((item) => {
-      const { id, country, post_code } = item;
+      const { id, country, post_code, emoji } = item;
       return (
         <div
           key={id}
@@ -63,7 +83,7 @@ export default class LandPost extends Component {
             this.props.setLand(e.target.getAttribute("postcode"));
           }}
         >
-          {country}
+          {`${country} ${emoji}`}
           {this.props.land === post_code && <Agree />}
         </div>
       );
