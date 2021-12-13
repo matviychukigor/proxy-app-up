@@ -79,6 +79,10 @@
   .home-wrapper{
     margin-left: 0px;
   }
+  .list {
+    justify-content: space-around;
+  }
+
 }
 
 @media screen and (max-width: 578px) {
