@@ -31,7 +31,12 @@
 .proxy_text{
     color: #fff;
     font-weight: 600;
-    font-size: 19px;
+    font-size: 16px;
+}
+
+.email_admin{
+    font-size: 13px;
+    padding-top: 6px;
 }
 
 .container_card {

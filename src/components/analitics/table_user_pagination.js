@@ -131,7 +131,7 @@ const PaginationTabUser = ({checkUser, setChekUser}) => {
                 
                 <div className="table_wrapper">
 
-                    {filterUser.map((k, i) => {
+                    {filterUser.reverse().map((k, i) => {
                     return(
                     <div key={i} className="test_wrapper">
                         <div  className="card">
@@ -142,14 +142,16 @@ const PaginationTabUser = ({checkUser, setChekUser}) => {
                                     <div className="label_text">NickName:</div>
                                     <div className="label_text">email:</div>
                                     <div className="label_text">balance:</div>
+                                    <div className="label_text">Дата регистрации:</div>
                                 </div>
 
                                 <div className="conteoner_proxy">
                                     <div className="proxy_text">{i+1}</div>
                                     <div className="proxy_text">{k.id}</div>
                                     <div className="proxy_text">{k.nickname}</div>
-                                    <div className="proxy_text">{k.email}</div>
+                                    <div className="proxy_text email_admin">{k.email}</div>
                                     <div className="proxy_text">{k.balance.toFixed(2)}</div>
+                                    <div className="proxy_text">{`${k.register_at.split("T")[0]} ${k.register_at.split("T")[1].slice(0, -7)}`}</div>
                                 </div>
                                 
                             </div>

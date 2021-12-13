@@ -25,7 +25,7 @@ const Replenishment = ({checkUser}) => {
                 </div>
             ):(
                 <div className="table_wrapper">
-                    {info.map((k, i) => {
+                    {info.reverse().map((k, i) => {
                     return(
                     <div key={i} className="test_wrapper">
                         <div  className="card">
@@ -43,11 +43,11 @@ const Replenishment = ({checkUser}) => {
 
                                 <div className="conteoner_proxy">
                                     <div className="proxy_text">{k.id}</div>
-                                    <div className="proxy_text">{k.merchant_id === null ? "---" : k.merchant_id}</div>
+                                    <div className="proxy_text invoice_id">{k.merchant_id === null ? "---" : k.merchant_id}</div>
                                     <div className="proxy_text">{k.invoice_currency === null ? "---" : k.invoice_currency}</div>
                                     <div className="proxy_text">{k.date_time.slice(0, -7)}</div>
                                     <div className="proxy_text">{k.invoice_amount}</div>
-                                    <div className="proxy_text">{k.invoice_id === null ? "---" : k.invoice_id}</div>
+                                    <div className="proxy_text invoice_id">{k.invoice_id === null ? "---" : k.invoice_id}</div>
                                     <div className="proxy_text">{k.invoice_status === null ? "---" : k.invoice_status}</div>
                                     <div className="proxy_text">{k.order_id}</div>
                                 </div>

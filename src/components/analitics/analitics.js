@@ -9,6 +9,7 @@ import InfoCard from "./card";
 import PaginationTabUser from "./table_user_pagination";
 import UserPays from "./user_pays";
 import Replenishment from "./replenishment";
+import UserPayments from "./user_payments";
 
 
 const Analitics = () => {
@@ -21,6 +22,9 @@ const Analitics = () => {
                 
                 <InfoCard/>
                 <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
+                    <Tab eventKey="payments" title="Пополнения">
+                        <UserPayments/>
+                    </Tab>
                     <Tab eventKey="home" title="See all users">
                         <PaginationTabUser
                             setChekUser={setChekUser}

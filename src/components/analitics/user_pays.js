@@ -26,7 +26,7 @@ const UserPays = ({checkUser}) => {
                 </div>
                 ):(
                 <div className="table_wrapper">
-                    {info.map((k, i) => {
+                    {info.reverse().map((k, i) => {
                     return(
                     <div key={i} className="test_wrapper">
                         <div  className="card">

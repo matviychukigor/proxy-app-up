@@ -17,6 +17,16 @@
     justify-content: space-evenly;
 }
 
+.payment_text{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.invoice_id{
+    font-size: 12px ;
+    padding-top: 6px;
+}
+
 .analitic_card{
     margin: 20px -180px;
 }
@@ -121,6 +131,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .invoice_id{
+        font-size: 9px;
+        padding-top: 11px;
+    }
     .logo_ghost{
         display: none;
     }
