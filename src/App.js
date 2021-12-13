@@ -169,6 +169,12 @@ class App extends Component {
                   <span className="nav-text user_info">Support</span>
                 </a>
               </li>
+              <li>
+                <a onClick={() => {this.setState({burger: !burger})}} href="https://t.me/+q1QrS77IrG43NjRi"  rel="noopener noreferrer" target="_blank">
+                  <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                  <span className="nav-text user_info">Ghost news</span>
+                </a>
+              </li>
               {role === "admin" ? (
                 <li>
                   <Link onClick={() => {this.setState({burger: !burger})}} to={"/Analitics"} className="nav-text">

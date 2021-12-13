@@ -200,7 +200,7 @@ export default class ShowProxy extends Component {
                   </button>
               </div>
               <div className="btn_buyBack">
-                  <div className="label_text back">Buy back</div>
+                  <div className="label_text back">Buy out</div>
                   <button 
                     type="button" 
                     className="btn btn-primary"
