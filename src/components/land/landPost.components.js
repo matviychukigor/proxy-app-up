@@ -17,11 +17,11 @@ export default class LandPost extends Component {
 
   state = {
     itemList: null,
+    filterListValue: "",
   };
 
   componentDidMount() {
     this.proxyService.getLand(this.props.getLand).then((items) => {
-      
       if (Array.isArray(items)) {
         const arrayItems = items.map((item, index) => {
           return { country: item, post_code: item, id: index++ };
@@ -75,6 +75,17 @@ export default class LandPost extends Component {
       return <Spinner />;
     }
 
-    return <div className="list">{this.renderItems()}</div>;
+    return  (
+      <div className="land_wrapper">
+        <input 
+          placeholder="Search land" 
+          type="text" 
+          style={{marginLeft: "80px"}}
+          value={this.state.filterListValue}
+          onChange={(e) => this.setState({filterListValue: e.target.value})}
+        />
+        <div className="list">{this.renderItems()}</div>
+      </div>
+    );
   }
 }

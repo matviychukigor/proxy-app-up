@@ -1,7 +1,7 @@
 export const buttonsQIWI = [
   {
     id: "1",
-    name: "Russian",
+    name: "рубль",
     emoji: " 🇷🇺",
     chek: false,
     type: "Qiwi",
@@ -9,7 +9,7 @@ export const buttonsQIWI = [
   },
   {
     id: "2",
-    name: "Ukraine",
+    name: "гривна",
     emoji: " 🇺🇦",
     chek: false,
     type: "Qiwi",
@@ -17,7 +17,7 @@ export const buttonsQIWI = [
   },
   {
     id: "3",
-    name: "Dollar",
+    name: "долар",
     emoji: null,
     chek: false,
     type: "Qiwi",
@@ -25,7 +25,7 @@ export const buttonsQIWI = [
   },
   {
     id: "4",
-    name: "Euro",
+    name: "евро",
     emoji: null,
     chek: false,
     type: "Qiwi",
@@ -33,7 +33,7 @@ export const buttonsQIWI = [
   },
   {
     id: "5",
-    name: "Kazahstan",
+    name: "тенге",
     emoji: " 🇰🇿",
     chek: false,
     type: "Qiwi",
@@ -44,7 +44,7 @@ export const buttonsQIWI = [
 export const buttonsCard = [
   {
     id: "1",
-    name: "Russian",
+    name: "рубли",
     emoji: " 🇷🇺",
     chek: false,
     type: "Card",
@@ -52,7 +52,7 @@ export const buttonsCard = [
   },
   {
     id: "2",
-    name: "Ukraine",
+    name: "гривна",
     emoji: " 🇺🇦",
     chek: false,
     type: "Card",

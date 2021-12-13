@@ -171,7 +171,7 @@ class App extends Component {
               </li>
               <li>
                 <a onClick={() => {this.setState({burger: !burger})}} href="https://t.me/+q1QrS77IrG43NjRi"  rel="noopener noreferrer" target="_blank">
-                  <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                  <i className="fa fa-newspaper-o" aria-hidden="true"></i>
                   <span className="nav-text user_info">Ghost news</span>
                 </a>
               </li>
