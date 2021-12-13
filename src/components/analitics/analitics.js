@@ -25,18 +25,18 @@ const Analitics = () => {
                     <Tab eventKey="payments" title="Пополнения">
                         <UserPayments/>
                     </Tab>
-                    <Tab eventKey="home" title="See all users">
+                    <Tab eventKey="home" title="Просмотр всех users">
                         <PaginationTabUser
                             setChekUser={setChekUser}
                             checkUser={checkUser}
                         />
                     </Tab>
-                    <Tab eventKey="profile" title="See information of select user">
+                    <Tab eventKey="profile" title="Информация о покупках юзера">
                         <UserPays
                             checkUser={checkUser}
                         />
                     </Tab>
-                    <Tab eventKey="replenishment" title="User replenishment">
+                    <Tab eventKey="replenishment" title="Информация о пополнениях юзера">
                         <Replenishment
                             checkUser={checkUser}
                         />
