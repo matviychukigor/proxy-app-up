@@ -194,6 +194,12 @@ class App extends Component {
             </div>
           ) : (
             <div className="navbar-nav ml-auto">
+              <li>
+                <Link onClick={() => {this.setState({burger: !burger})}} to={"/home"} className="nav-text">
+                  <i className="fa fa-search fa-2x"></i>
+                  <span className="nav-text">Search proxy</span>
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link onClick={() => {this.setState({burger: !burger})}} to={"/login"} className="nav-text">
                   <i className="fa fa-sign-in fa-2x"></i>
@@ -206,6 +212,18 @@ class App extends Component {
                   <i className="fa fa-arrow-up fa-2x"></i>
                   <span className="nav-text">Sign Up</span>
                 </Link>
+              </li>
+              <li>
+                <a onClick={() => {this.setState({burger: !burger})}} href="https://t.me/GhostProxy_support"  rel="noopener noreferrer" target="_blank">
+                  <i className="fa fa-telegram" aria-hidden="true"></i>
+                  <span className="nav-text user_info">Support</span>
+                </a>
+              </li>
+              <li>
+                <a onClick={() => {this.setState({burger: !burger})}} href="https://t.me/+q1QrS77IrG43NjRi"  rel="noopener noreferrer" target="_blank">
+                  <i className="fa fa-newspaper-o" aria-hidden="true"></i>
+                  <span className="nav-text user_info">Ghost news</span>
+                </a>
               </li>
               <li>
                 <Link onClick={() => {this.setState({burger: !burger})}} to={"/FAQ"} className="nav-text">
