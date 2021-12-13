@@ -131,10 +131,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .invoice_id{
-        font-size: 9px;
-        padding-top: 11px;
-    }
+    
     .logo_ghost{
         display: none;
     }
@@ -177,5 +174,14 @@
     }
     .proxy_text{
         font-size: 15px;
+    }
+
+    .email_admin{
+        font-size: 11px;
+    }
+
+    .invoice_id{
+        font-size: 9px;
+        padding-top: 11px;
     }
 }
