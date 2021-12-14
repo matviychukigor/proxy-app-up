@@ -62,7 +62,7 @@
 .country_wrapper{
   list-style: none;
   padding-left: 0px;
-  height: 110px;
+  max-height: 110px;
   width: 270px;
   overflow: auto;
 }
