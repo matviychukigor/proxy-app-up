@@ -4,6 +4,7 @@ import { countries, } from "./countries";
 import proxyService from "../../services/proxy.service";
 import Spinner from "../spinner/spinner.component";
 
+
 import "./landPost.css";
 
 import Agree from "./agree.component";
@@ -97,13 +98,7 @@ export default class LandPost extends Component {
 
     return  (
       <div className="land_wrapper">
-        {/* <input 
-          placeholder="Search land" 
-          type="text" 
-          style={{marginLeft: "80px"}}
-          value={this.state.filterListValue}
-          onChange={(e) => this.setState({filterListValue: e.target.value})}
-        /> */}
+        
         <div className="list">{this.renderItems()}</div>
       </div>
     );

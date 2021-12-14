@@ -41,6 +41,44 @@
   outline: none;
 }
 
+.input_wrapper{
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_country{
+  width: 270px;
+  padding: 10px;
+}
+
+.hide_input{
+  height: 0px;
+  display: none;
+}
+
+.country_wrapper{
+  list-style: none;
+  padding-left: 0px;
+  height: 110px;
+  width: 270px;
+  overflow: auto;
+}
+
+.country_name{
+  list-style: none;
+  width: 270px;
+  height: 36px;
+  padding: 10px;
+}
+
+.country_name:hover{
+  background-color: #5a6268;
+  color: azure;
+}
+
 .list__item:hover {
   background: #5a6268;
 }

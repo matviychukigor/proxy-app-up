@@ -18,6 +18,7 @@ import {
 } from "reactstrap";
 import LandPost from "../land/landPost.components";
 import ShowProxy from "../showProxy/showProxy.component";
+import SearchInput from "../land/input_search";
 
 import searchimg from "../search-worldwide.png";
 import logo from "../logo.png";
@@ -157,6 +158,9 @@ export default class Proxy extends Component {
             );
           })}
         </Nav>
+        <SearchInput
+          setLand={this.setLand.bind(this)}
+        />
         <TabContent
           className="tabContent mb-3"
           activeTab={this.state.activeTab}
