@@ -34,12 +34,10 @@ export default class History extends Component {
   //Modal to ressel
 
   modalOnResell(ip) {
-    console.log(ip)
     this.setState({ modalClass: "modal-open" });
       this.proxyService
       .prolong(ip)
       .then((ref) => {
-        console.log(ref);
         if(ref.status === 0){
           this.setState({ refaundProxy: ip });
         }
@@ -53,8 +51,10 @@ export default class History extends Component {
   }
 
   modalClosed() {
-    this.setState({ modalClass: "modal-closed" });
-    console.log("closed");
+    this.setState({ 
+      modalClass: "modal-closed",
+      refaundProxy: null
+    });
   }
 
   showMsgResell() {
@@ -65,7 +65,7 @@ export default class History extends Component {
     return (
       <div>
         {!this.state.refaundProxy ? (
-          <span className="label">Sorry, but this proxy deleted from ghost-proxy servise try to buy a new proxy</span>
+          <span className="label">Sorry, proxy can't be extended</span>
         ) : 
         (
           <>

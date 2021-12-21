@@ -174,12 +174,12 @@ export default class ShowProxy extends Component {
               <div className="conteoner_proxy">
                   <div className="proxy_text">{real_ip}</div>
                   <div className="proxy_text">{domain}</div>
-                  <div className="proxy_text">{city}</div>
-                  <div className="proxy_text">{isp}</div>
-                  <div className="proxy_text">{speed}</div>
-                  <div className="proxy_text">{zip}</div>
-                  <div className="proxy_text">{region}</div>
-                  <div className="proxy_text">{typename}</div>
+                  <div className="proxy_text">{city === null ? "---" : city}</div>
+                  <div className="proxy_text">{isp === null ? "---" : isp}</div>
+                  <div className="proxy_text">{speed === null ? "---" : speed}</div>
+                  <div className="proxy_text">{zip === null ? "---" : zip}</div>
+                  <div className="proxy_text">{region === null ? "---" : region}</div>
+                  <div className="proxy_text">{typename === null ? "---" : typename}</div>
               </div>
               
           </div>

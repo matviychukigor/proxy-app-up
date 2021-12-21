@@ -21,17 +21,6 @@ class Proxy {
     return await res.json();
   };
 
-  getResourceWithoutToken = async (url) => {
-    const res =  await fetch(`${this._apiBase}${url}`, {
-      method: "GET",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    })
-    return await res.json();
-  }
-
   postResource = async (url, data) => {
     const res = await fetch(`${this._apiBase}${url}`, {
       method: "POST", 
