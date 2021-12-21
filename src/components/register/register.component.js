@@ -141,7 +141,6 @@ export default class Register extends Component {
         this.state.confirmPassword
       ).then(
         response => {
-          console.log(response);
           this.setState({
             message: "Succesful",
             successful: true

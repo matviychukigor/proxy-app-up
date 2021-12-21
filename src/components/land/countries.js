@@ -453,7 +453,7 @@ export const countries = [
         country: "Ukraine",
         post: "UA",
         emoji: "🇺🇦",
-        region: "russia"
+        region: "russia", 
     },
     {
         country: "Uzbekistan",

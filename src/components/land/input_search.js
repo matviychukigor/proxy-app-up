@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { countries, } from "./countries";
 
-const SearchInput = ({setLand}) => {
+const SearchInput = ({setLand, setProxyLand}) => {
     const [openInput, setOpenInput] = useState(true)
     const [inputValue, setInputValue] = useState("")
     /* const [postCountry, setPostCountry] = useState("") */
@@ -39,7 +39,7 @@ const SearchInput = ({setLand}) => {
                                 setOpenInput(!openInput)
                                 setInputValue(`${item.country}${item.emoji}`)
                                 setLand(item.post)
-                                /* setPostCountry(item.post) */
+                                setProxyLand(item.region)
                             }}
                         >
                             {item.country}{item.emoji}

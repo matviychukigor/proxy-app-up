@@ -134,6 +134,10 @@ export default class Proxy extends Component {
     this.setState({ selectLand: data });
   }
 
+  setProxyLand(data = "europe"){
+    this.setState({proxyLand: data})
+  }
+
   render() {
     const proxList = this.searchBtn();
 
@@ -160,6 +164,7 @@ export default class Proxy extends Component {
         </Nav>
         <SearchInput
           setLand={this.setLand.bind(this)}
+          setProxyLand={this.setProxyLand.bind(this)}
         />
         <TabContent
           className="tabContent mb-3"
