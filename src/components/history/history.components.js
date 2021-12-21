@@ -37,14 +37,14 @@ export default class History extends Component {
     console.log(ip)
     this.setState({ modalClass: "modal-open" });
       this.proxyService
-      .prolong()
+      .prolong(ip)
       .then((ref) => {
         console.log(ref);
-        if(ref.error === 0){
+        if(ref.status === 0){
           this.setState({ refaundProxy: ip });
         }
-        if(ref.error > 0){
-          this.setState({ refaundProxy: "please try again or later" });
+        if(ref.status > 0){
+          this.setState({ refaundProxy: false });
         }
       })
       .catch((error) => {
@@ -64,12 +64,20 @@ export default class History extends Component {
 
     return (
       <div>
-        <span className="label">Congradulation! Your proxy: </span>
-        <input
-          className="sellIpInput"
-          defaultValue={this.state.refaundProxy}
-        ></input>
-        <span className="label"> is prolong</span>
+        {!this.state.refaundProxy ? (
+          <span className="label">Sorry, but this proxy deleted from ghost-proxy servise try to buy a new proxy</span>
+        ) : 
+        (
+          <>
+            <span className="label">Congradulation! Your proxy: </span>
+              <input
+                className="sellIpInput"
+                defaultValue={this.state.refaundProxy}
+              ></input>
+            <span className="label"> is prolong</span>
+          </>
+        )}
+        
       </div>
     );
   }

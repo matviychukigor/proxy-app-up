@@ -21,6 +21,17 @@ class Proxy {
     return await res.json();
   };
 
+  getResourceWithoutToken = async (url) => {
+    const res =  await fetch(`${this._apiBase}${url}`, {
+      method: "GET",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+    return await res.json();
+  }
+
   postResource = async (url, data) => {
     const res = await fetch(`${this._apiBase}${url}`, {
       method: "POST", 
@@ -72,7 +83,7 @@ class Proxy {
   }
 
   prolong(ip){
-    return this.getResource(`base/prolong?ip=51.81.122.149%3A45233`);
+    return this.getResource(`base/prolong?ip=${ip}`);
   }
 
   buyProxy(id) {
