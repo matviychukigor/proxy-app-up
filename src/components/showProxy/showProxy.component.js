@@ -38,6 +38,7 @@ export default class ShowProxy extends Component {
     this.proxyService
       .getContinent(proxyLand, typeIp, blacklist, City, Zip, selectLand)
       .then((proxys) => {
+        console.log(proxys)
         if(proxys.status === 0){
           const prox = proxys.data;
           let proxyList = [];
@@ -174,12 +175,12 @@ export default class ShowProxy extends Component {
               <div className="conteoner_proxy">
                   <div className="proxy_text">{real_ip}</div>
                   <div className="proxy_text">{domain}</div>
-                  <div className="proxy_text">{city === null ? "---" : city}</div>
-                  <div className="proxy_text">{isp === null ? "---" : isp}</div>
-                  <div className="proxy_text">{speed === null ? "---" : speed}</div>
-                  <div className="proxy_text">{zip === null ? "---" : zip}</div>
-                  <div className="proxy_text">{region === null ? "---" : region}</div>
-                  <div className="proxy_text">{typename === null ? "---" : typename}</div>
+                  <div className="proxy_text">{city === "" ? "---" : city}</div>
+                  <div className="proxy_text">{isp === "" ? "---" : isp}</div>
+                  <div className="proxy_text">{speed === "" ? "---" : speed}</div>
+                  <div className="proxy_text">{zip === "" ? "---" : zip}</div>
+                  <div className="proxy_text">{region === "" ? "---" : region}</div>
+                  <div className="proxy_text">{typename === "" ? "---" : typename}</div>
               </div>
               
           </div>
