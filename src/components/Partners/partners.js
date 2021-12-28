@@ -1,17 +1,19 @@
 import React from 'react'
 import keitaro from "../Keitaro.jpeg";
 
+import "./pantners.css";
+
 const Pantners = () => {
   return(
-    <>
+    <div className="partners_wrapper">
         <a href="https://keitaro.io/" rel="noopener noreferrer" target="_blank">
           <img
-            style={{width: "270px", height: "150px", borderRadius: "20px", margin: "20px auto", display: "flex", }}
+            className="partners_img"
             src={keitaro}
             alt="keitaro"
           ></img>
         </a>
-    </>
+    </div>
   )
     
 }

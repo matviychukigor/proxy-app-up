@@ -1,0 +1,15 @@
+.partners_wrapper{
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: center;
+    width: 100%;
+    height: 90px;
+}
+
+.partners_img{
+    width: 170px;
+    height: 80px;
+    border-radius: 20px;
+    margin: 20px  auto;
+    display: flex;
+}

@@ -3,8 +3,6 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-import Pantners from "../Partners/partners";
-
 import { Link } from "react-router-dom";
 
 import AuthService from "../../services/auth.service";
@@ -177,7 +175,7 @@ export default class Login extends Component {
             </Form>
           </div>
         </div>
-        <Pantners/>
+        
       </div>
     );
   }

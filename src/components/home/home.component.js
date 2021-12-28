@@ -19,7 +19,6 @@ import {
 import LandPost from "../land/landPost.components";
 import ShowProxy from "../showProxy/showProxy.component";
 import SearchInput from "../land/input_search";
-import Pantners from "../Partners/partners";
 
 import searchimg from "../search-worldwide.png";
 import logo from "../logo.png";
@@ -303,7 +302,6 @@ export default class Proxy extends Component {
           <div>{proxList}</div>
         )}
 
-        <Pantners/>
       </div>
     );
   }

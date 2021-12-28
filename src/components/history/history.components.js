@@ -6,7 +6,6 @@ import proxyService from "../../services/proxy.service";
 
 import logo from "../logo.png";
 import ghost from "../../ghost.ico";
-import Pantners from "../Partners/partners";
 
 import "./history.css";
 import "../modal/modal.css";
@@ -211,7 +210,6 @@ export default class History extends Component {
         <div className="test_wrapper">
           {items}
         </div>
-        <Pantners/>
       </div>
     );
   }

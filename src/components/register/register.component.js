@@ -4,7 +4,6 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 import { Redirect } from "react-router-dom";
-import Pantners from "../Partners/partners";
 
 import { Link } from "react-router-dom";
 
@@ -274,7 +273,7 @@ export default class Register extends Component {
             </Form>
           </div>
         </div>
-        <Pantners/>
+        
       </div>
     );
   }

@@ -145,6 +145,11 @@ nav.main-menu.expanded {
   background-color: red
 }
 
+.custom{
+  min-height: 100%;
+  position: relative;
+}
+
 @media screen and (max-width: 769px) {
   .fa{
     height: 45px;

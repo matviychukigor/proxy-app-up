@@ -22,6 +22,7 @@ import axios from "axios";
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
+import Pantners from "./components/Partners/partners";
 
 
 class App extends Component {
@@ -247,7 +248,7 @@ class App extends Component {
             <Route exact path="/analitics" component={Analitics} />
           </Switch>
         </div>
-
+        <Pantners/>
         {/*<AuthVerify logOut={this.logOut}/> */}
         
       </div>
