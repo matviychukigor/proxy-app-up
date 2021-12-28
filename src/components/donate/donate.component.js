@@ -3,6 +3,7 @@ import { Container, Button } from "reactstrap";
 
 import { buttonsQIWI, buttonsCard } from "./data";
 import Label from "./label.component";
+import Pantners from "../Partners/partners";
 
 import "./donate.css";
 
@@ -231,6 +232,7 @@ export default function Donate() {
             </div>
           </div>
         </div>
+        <Pantners/>
       </div>
     </Container>
   );

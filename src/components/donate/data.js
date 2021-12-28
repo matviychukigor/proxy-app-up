@@ -44,7 +44,7 @@ export const buttonsQIWI = [
 export const buttonsCard = [
   {
     id: "1",
-    name: "рубль",
+    name: "RU CARD",
     emoji: " 🇷🇺",
     chek: false,
     type: "Card",
@@ -52,7 +52,7 @@ export const buttonsCard = [
   },
   {
     id: "2",
-    name: "гривна",
+    name: "UA CARD",
     emoji: " 🇺🇦",
     chek: false,
     type: "Card",
