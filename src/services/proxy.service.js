@@ -63,6 +63,10 @@ class Proxy {
     return this.getResource(`pays/all_statistics`)
   }
 
+  getStatistics() {
+    return this.getResource(`admin/statistic`)
+  }
+
   historyProxy() {
     return this.getResource(`pays/userPay`);
   }
